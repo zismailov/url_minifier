@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: url_minifier_development
+
+test:
+  <<: *default
+  database: url_minifier_test
+
+staging:
+  <<: *default
+  database: url_minifier_staging
+
+production:
+  <<: *default
+  #username: username
+  password: <%= ENV['URL_MINIFIER_DATABASE_PASSWORD'] %>
+  database: url_minifier_production
+  #host: host
