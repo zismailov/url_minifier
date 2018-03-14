@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def current_user
+    UserDecorator.decorate(super) unless super.nil?
+  end
+
   def not_authenticated
     redirect_to login_path, alert: "Please login first"
   end

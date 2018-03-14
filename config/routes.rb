@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root "users#new"
+  root "user_sessions#new"
+  resources :urls, only: %i[new create show]
   resources :user_sessions
   resources :users
 
