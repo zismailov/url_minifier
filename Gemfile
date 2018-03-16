@@ -14,12 +14,14 @@ gem "jquery-rails"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.5"
+gem "redis", "~> 4.0"
+gem "redis-namespace"
+gem "redis-rack-cache"
+gem "redis-rails"
 gem "sass-rails", "~> 5.0"
 gem "sorcery"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
 
 group :test do
   gem "capybara", "~> 2.13"
