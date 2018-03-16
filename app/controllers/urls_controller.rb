@@ -1,6 +1,10 @@
 class UrlsController < ApplicationController
-  decorates_assigned :url, :user
+  skip_before_action :require_login, only: [:index]
   before_action :set_url, only: [:show]
+
+  def index
+    @urls = current_user.urls
+  end
 
   def new
     @url = Url.new
@@ -21,7 +25,7 @@ class UrlsController < ApplicationController
   private
 
   def set_url
-    @url = Url.find(params[:id])
+    @url = current_user
   end
 
   def url_params

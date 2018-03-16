@@ -9,7 +9,7 @@ RSpec.describe "Sign Up", type: :feature do
     fill_in "user[email]", with: user_attributes[:email]
     fill_in "user[password]", with: user_attributes[:password]
     fill_in "user[password_confirmation]", with: user_attributes[:password_confirmation]
-    click_button "Create User"
+    click_button "Create user"
 
     expect(page).to have_content("Please login first")
   end

@@ -1,4 +1,6 @@
-<%= form_with(model: @url, local: true) do |form| %>
+<div class="login-form">
+  <h2 class="text-center">New link</h2>
+  <%= form_with(model: @url, local: true) do |form| %>
   <% if @url.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@url.errors.count, "error") %> prohibited this url from being saved:</h2>
@@ -11,29 +13,26 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :long_url %>
-    <%= form.text_field :long_url, id: :url_long_url %>
-  </div>
+    <div class="form-group">
+      <%= form.text_field :long_url, id: :url_long_url, class: "form-control", placeholder: "Url", required: "required" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :short_url %>
-    <%= form.text_field :short_url, id: :url_short_url %>
-  </div>
+    <div class="form-group">
+      <%= form.text_field :short_url, id: :url_short_url, class: "form-control", placeholder: "Short url" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :life_term %>
-    <%= form.text_field :life_term, id: :url_life_term %>
-  </div>
+    <div class="form-group">
+      <%= form.text_field :life_term, id: :url_life_term, class: "form-control", placeholder: "Life term", required: "required" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :delay_time %>
-    <%= form.text_field :delay_time, id: :url_delay_time %>
-  </div>
+    <div class="form-group">
+      <%= form.text_field :delay_time, id: :url_delay_time, class: "form-control", placeholder: "Delay time", required: "required" %>
+    </div>
 
-  <%= form.hidden_field :user_id, value: current_user.id %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div class="form-group">
+      <%= form.submit "Create link", html: {formnovalidate: true}, class: "btn btn-primary btn-block" %>
+    </div>
+  <% end %>
+</div>

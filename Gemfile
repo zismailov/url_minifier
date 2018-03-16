@@ -7,7 +7,8 @@ end
 
 gem "bootstrap-sass", "~> 3.3.6"
 gem "coffee-rails", "~> 4.2"
-gem "draper", "3.0.0.pre1"
+gem "draper", github: "drapergem/draper"
+gem "hashids"
 gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
 gem "pg", ">= 0.18", "< 2.0"

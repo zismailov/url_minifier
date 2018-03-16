@@ -1,0 +1,20 @@
+<% if @urls %>
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <th scope="col">Url</th>
+        <th scope="col">Short url</th>
+        <th scope="col">Created</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @urls.each do |url| %>
+        <tr>
+          <td><%= url.long_url %></td>
+          <td><%= url.decorate.full_url %></td>
+          <td><%= url.decorate.created_ago %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

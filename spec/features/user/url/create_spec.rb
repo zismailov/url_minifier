@@ -16,16 +16,16 @@ RSpec.describe "User creates new url", type: :feature do
     fill_in "url[life_term]", with: url_attributes[:life_term]
     fill_in "url[delay_time]", with: url_attributes[:delay_time]
 
-    click_button "Create Url"
+    click_button "Create link"
 
-    expect(page).to have_content created_url.long_url
+    expect(page).to have_content "#{URI.parse(current_url).host}/#{created_url.short_url}"
   end
 
   it "with empty long url" do
-    fill_in "url[short_url]", with: url_attributes[:short_url]
     fill_in "url[long_url]", with: ""
+    fill_in "url[short_url]", with: url_attributes[:short_url]
 
-    click_button "Create Url"
+    click_button "Create link"
 
     expect(page).to have_content "can't be blank"
   end

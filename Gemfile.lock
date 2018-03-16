@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/drapergem/draper.git
+  revision: ed62f5555148b997eeb9feb365dd3dffcdb3d903
+  specs:
+    draper (3.0.1)
+      actionpack (~> 5.0)
+      activemodel (~> 5.0)
+      activemodel-serializers-xml (~> 1.0)
+      activesupport (~> 5.0)
+      request_store (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -79,12 +90,6 @@ GEM
     dotenv-rails (2.2.1)
       dotenv (= 2.2.1)
       railties (>= 3.2, < 5.2)
-    draper (3.0.0.pre1)
-      actionpack (~> 5.0)
-      activemodel (~> 5.0)
-      activemodel-serializers-xml (~> 1.0)
-      activesupport (~> 5.0)
-      request_store (~> 1.0)
     erubi (1.7.1)
     execjs (2.7.0)
     factory_bot (4.8.2)
@@ -98,6 +103,7 @@ GEM
     ffi (1.9.23)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hashids (1.0.4)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -265,9 +271,10 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   database_cleaner
   dotenv-rails (~> 2.1, >= 2.1.1)
-  draper (= 3.0.0.pre1)
+  draper!
   factory_bot_rails
   ffaker
+  hashids
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)

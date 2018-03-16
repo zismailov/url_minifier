@@ -11,7 +11,7 @@ RSpec.describe "Update Account", type: :feature do
   it "User enters not matched passwords" do
     fill_in "user[password]", with: "qwerty"
     fill_in "user[password_confirmation]", with: "123123"
-    click_on "Update User"
+    click_on "Update user"
 
     expect(page).to have_content("doesn't match Password")
   end

@@ -6,4 +6,8 @@ FactoryBot.define do
     delay_time "2"
     user
   end
+
+  trait :empty_short_url do
+    short_url ""
+  end
 end
