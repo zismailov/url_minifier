@@ -27,7 +27,7 @@ class UrlsController < ApplicationController
     url = Url.find_by(short_url: params[:short_url]) || Url.new
     errors = ErrorService.new(url).call
     if errors.blank?
-      UrlService.new(url).call
+      UrlService.new(url, request.user_agent).call
       redirect_to urls_path
     else
       redirect_to new_url_path, alert: errors.join("; ")

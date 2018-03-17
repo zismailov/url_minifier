@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180314074052) do
+ActiveRecord::Schema.define(version: 20180317053249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "statistics", force: :cascade do |t|
+    t.datetime "date"
+    t.text "gadget"
+    t.text "browser"
+    t.bigint "url_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["url_id"], name: "index_statistics_on_url_id"
+  end
 
   create_table "urls", force: :cascade do |t|
     t.text "long_url"
@@ -35,5 +45,6 @@ ActiveRecord::Schema.define(version: 20180314074052) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "statistics", "urls"
   add_foreign_key "urls", "users"
 end

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root "user_sessions#new"
-  resources :urls
+
+  resources :urls do
+    resources :statistics, only: [:index]
+  end
   resources :user_sessions
   resources :users
 

@@ -7,6 +7,7 @@ end
 
 gem "bootstrap-sass", "~> 3.3.6"
 gem "coffee-rails", "~> 4.2"
+gem "device_detector"
 gem "draper", github: "drapergem/draper"
 gem "hashids"
 gem "jbuilder", "~> 2.5"

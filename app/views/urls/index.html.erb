@@ -5,6 +5,7 @@
         <th scope="col">Url</th>
         <th scope="col">Short url</th>
         <th scope="col">Created</th>
+        <th scope="col">&nbsp;</th>
       </tr>
     </thead>
     <tbody>
@@ -13,6 +14,7 @@
           <td><%= url.long_url %></td>
           <td><%= url.decorate.full_url %></td>
           <td><%= url.decorate.created_ago %></td>
+          <td><%= link_to "statistic", url_statistics_path(url), {method: 'get'} %></td>
         </tr>
       <% end %>
     </tbody>
