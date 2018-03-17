@@ -22,7 +22,6 @@ gem "redis-rack-cache"
 gem "redis-rails"
 gem "sass-rails", "~> 5.0"
 gem "sorcery"
-gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 
 group :test do

@@ -3,6 +3,6 @@ class Url < ApplicationRecord
   has_many :statistics
 
   validates :long_url, presence: true
-  validates :short_url, uniqueness: true
+  validates :short_url, uniqueness: true, on: :update
   validates :life_term, :delay_time, numericality: { only_integer: true }, allow_blank: true
 end
